@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/SPA-realApp/static/css/main.abed7881.css",
-    "main.js": "/SPA-realApp/static/js/main.c71f0740.js",
+    "main.js": "/SPA-realApp/static/js/main.e2dd3a72.js",
     "static/js/787.b0066a08.chunk.js": "/SPA-realApp/static/js/787.b0066a08.chunk.js",
     "static/media/bootstrap-icons.woff?": "/SPA-realApp/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
     "static/media/bootstrap-icons.woff2?": "/SPA-realApp/static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
     "index.html": "/SPA-realApp/index.html",
     "main.abed7881.css.map": "/SPA-realApp/static/css/main.abed7881.css.map",
-    "main.c71f0740.js.map": "/SPA-realApp/static/js/main.c71f0740.js.map",
+    "main.e2dd3a72.js.map": "/SPA-realApp/static/js/main.e2dd3a72.js.map",
     "787.b0066a08.chunk.js.map": "/SPA-realApp/static/js/787.b0066a08.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abed7881.css",
-    "static/js/main.c71f0740.js"
+    "static/js/main.e2dd3a72.js"
   ]
 }
