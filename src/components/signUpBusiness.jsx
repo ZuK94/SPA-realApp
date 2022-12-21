@@ -26,11 +26,7 @@ const SignUpBusiness = () => {
         .min(5)
         .max(150)
         .required(),
-      password: Joi.string()
-        .min(8)
-        .max(20)
-        .base64({ paddingRequired: false })
-        .required(),
+      password: Joi.string().min(8).max(20).required(),
     }),
     async onSubmit(values) {
       setError("");
@@ -38,7 +34,7 @@ const SignUpBusiness = () => {
         await createUser({ ...values, biz: true });
         toast("your business account is ready");
         await logIn({ email: values.email, password: values.password });
-        navigate("/my-cards");
+        navigate("/SPA-realApp/my-cards");
       } catch ({ response }) {
         if (response && response.status === 400) {
           setError(response.data);
@@ -47,13 +43,13 @@ const SignUpBusiness = () => {
     },
   });
   if (user) {
-    return <Navigate to={"SPA-realApp"} />;
+    return <Navigate to={"/SPA-realApp"} />;
   }
   return (
     <>
       <PageHeader
-        title={"Sign up for Business"}
-        description={`Sign up for business account`}
+        title={"Sign up for a Business account"}
+        description={`create your business account here`}
       />
       {error && <div className="alert alert-danger">{error}</div>}
       <form autoComplete="off" noValidate onSubmit={form.handleSubmit}>

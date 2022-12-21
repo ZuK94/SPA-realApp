@@ -1,5 +1,3 @@
-import { boolean } from "joi";
-
 const Input = ({ type, label, name, error, ...rest }) => {
   return (
     <>

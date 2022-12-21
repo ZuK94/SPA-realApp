@@ -26,11 +26,7 @@ const SignUp = () => {
         .min(5)
         .max(150)
         .required(),
-      password: Joi.string()
-        .min(8)
-        .max(20)
-        .base64({ paddingRequired: false })
-        .required(),
+      password: Joi.string().min(8).max(20).required(),
     }),
     async onSubmit(values) {
       try {
@@ -38,7 +34,7 @@ const SignUp = () => {
         await logIn({ email: values.email, password: values.password });
         setError("");
         navigate("/SPA-realApp");
-        toast("congratulations, you are now a user");
+        toast("congratulations, you are a user now");
       } catch ({ response }) {
         if (response && response.status === 400) {
           setError(response.data);
@@ -47,7 +43,7 @@ const SignUp = () => {
     },
   });
   if (user) {
-    return <Navigate to="SPA-realApp" />;
+    return <Navigate to="/SPA-realApp" />;
   }
   return (
     <>

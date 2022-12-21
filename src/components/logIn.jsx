@@ -35,7 +35,7 @@ const LogIn = () => {
 
       try {
         await logIn(values);
-        navigate("/my-cards");
+        navigate("/SPA-realApp/my-cards");
         toast("you have logged in successfully");
       } catch ({ response }) {
         if (response && response.status === 400) {
@@ -45,7 +45,7 @@ const LogIn = () => {
     },
   });
   if (user) {
-    return <Navigate to="SPA-realApp" />;
+    return <Navigate to="/SPA-realApp" />;
   }
   return (
     <>

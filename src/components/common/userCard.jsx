@@ -14,10 +14,13 @@ export const UserCard = ({ id, name, description, address, phone, image }) => {
           <li className="list-group-item">{phone}</li>
         </ul>
         <div className="card-body">
-          <Link to={`/my-cards/edit/${id}`} className="card-link">
+          <Link to={`/SPA-realApp/my-cards/edit/${id}`} className="card-link">
             Edit card
           </Link>
-          <Link to={`/my-cards/delete/${id}`} className="card-link link-danger">
+          <Link
+            to={`/SPA-realApp/my-cards/delete/${id}`}
+            className="card-link link-danger"
+          >
             Delete card
           </Link>
         </div>

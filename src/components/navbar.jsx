@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/authContextProvider";
-import { getUser } from "../services/userService";
 
 const Navbar = () => {
   const { user } = useAuth();
@@ -29,7 +27,10 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"about"} className="nav-link px-2 text-white">
+                <NavLink
+                  to={"SPA-realApp/about"}
+                  className="nav-link px-2 text-white"
+                >
                   About
                 </NavLink>
               </li>
@@ -37,7 +38,7 @@ const Navbar = () => {
                 <>
                   <li>
                     <NavLink
-                      to={"my-cards"}
+                      to={"SPA-realApp/my-cards"}
                       className="nav-link px-2 text-white"
                     >
                       My cards
@@ -50,7 +51,10 @@ const Navbar = () => {
             <ul className="nav col-12 col-lg-auto ms-lg-auto justify-content-center mb-2  mb-md-0">
               {user ? (
                 <li>
-                  <NavLink to={"log-out"} className="nav-link px-2 text-danger">
+                  <NavLink
+                    to={"SPA-realApp/log-out"}
+                    className="nav-link px-2 text-danger"
+                  >
                     Log Out
                   </NavLink>
                 </li>
@@ -58,7 +62,7 @@ const Navbar = () => {
                 <>
                   <li>
                     <NavLink
-                      to={"log-in"}
+                      to={"SPA-realApp/log-in"}
                       className="nav-link px-2 text-primary"
                     >
                       Log in
@@ -66,7 +70,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <NavLink
-                      to={"sign-up"}
+                      to={"SPA-realApp/sign-up"}
                       className="nav-link px-2 text-warning"
                     >
                       sign-up
@@ -74,7 +78,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <NavLink
-                      to={"sign-up-business"}
+                      to={"SPA-realApp/sign-up-business"}
                       className="nav-link px-2 text-warning"
                     >
                       sign-up business

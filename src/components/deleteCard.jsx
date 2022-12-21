@@ -9,7 +9,7 @@ const DeleteCard = () => {
   useEffect(() => {
     const deleteCard = async () => {
       await cardService.deleteCard(id);
-      navigate("/my-cards");
+      navigate("/SPA-realApp/my-cards");
     };
     deleteCard();
   }, []);

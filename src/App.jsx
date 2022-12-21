@@ -29,29 +29,32 @@ function App() {
       <main className="flex-fill container">
         <Routes>
           <Route path="SPA-realApp" element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="SPA-realApp/about" element={<About />} />
           <Route
-            path="my-cards"
+            path="SPA-realApp/my-cards"
             element={
               <ProtectedRoute onlyBiz>
                 <MyCards />
               </ProtectedRoute>
             }
           />
-          <Route path="about" element={<About />} />
+          <Route path="SPA-realApp/about" element={<About />} />
           <Route
-            path="log-out"
+            path="SPA-realApp/log-out"
             element={
               <ProtectedRoute>
                 <LogOut />
               </ProtectedRoute>
             }
           />
-          <Route path="log-in" element={<LogIn />} />
-          <Route path="sign-up" element={<SignUp />} />
-          <Route path="sign-up-business" element={<SignUpBusiness />} />
+          <Route path="SPA-realApp/log-in" element={<LogIn />} />
+          <Route path="SPA-realApp/sign-up" element={<SignUp />} />
           <Route
-            path="card-creator"
+            path="SPA-realApp/sign-up-business"
+            element={<SignUpBusiness />}
+          />
+          <Route
+            path="SPA-realApp/card-creator"
             element={
               <ProtectedRoute onlyBiz>
                 <CreateCard />
@@ -59,7 +62,7 @@ function App() {
             }
           />
           <Route
-            path="/my-cards/edit/:id"
+            path="SPA-realApp/my-cards/edit/:id"
             element={
               <ProtectedRoute onlyBiz>
                 <EditCard />
@@ -67,7 +70,7 @@ function App() {
             }
           />{" "}
           <Route
-            path="/my-cards/delete/:id"
+            path="SPA-realApp/my-cards/delete/:id"
             element={
               <ProtectedRoute onlyBiz>
                 <DeleteCard />

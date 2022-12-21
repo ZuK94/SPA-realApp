@@ -4,7 +4,7 @@ import { useAuth } from "../context/authContextProvider";
 const ProtectedRoute = ({ children, onlyBiz = false }) => {
   const { user } = useAuth();
   if (!user || (onlyBiz && !user.biz)) {
-    return <Navigate to="/" />;
+    return <Navigate to="/SPA-realApp" />;
   }
   return children;
 };

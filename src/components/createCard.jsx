@@ -3,7 +3,7 @@ import Joi from "joi";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { cardService, createCard } from "../services/cardService";
+import { cardService } from "../services/cardService";
 import formikValidationUsingJoi from "../utils/formikValidationUsingJoi";
 import Input from "./common/input";
 import PageHeader from "./common/pageHeader";
@@ -36,10 +36,18 @@ const CreateCard = () => {
       bizPhone: Joi.string()
         .min(9)
         .max(10)
-        .regex(/^0[2-9]\d{7,8}$/)
+        .regex(/^0[2-9]\d{7,8}$/, { name: "legal phone number" })
         .required()
         .label("business phone"),
-      bizImage: Joi.string().allow("").min(11).max(1024).label("business logo"),
+      bizImage: Joi.string()
+        .regex(
+          /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/,
+          { name: "legal image URL" }
+        )
+        .allow("")
+        .min(11)
+        .max(2048)
+        .label("business logo"),
     }),
     async onSubmit(values) {
       try {
@@ -50,7 +58,7 @@ const CreateCard = () => {
         const response = await createUserCard(body);
         if (response && response.status === 200) {
           toast("your card has been created");
-          return navigate("/my-cards");
+          return navigate("/SPA-realApp/my-cards");
         }
       } catch ({ response }) {
         if (response && response.status === 400) {

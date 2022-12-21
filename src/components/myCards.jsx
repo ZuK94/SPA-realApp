@@ -33,7 +33,7 @@ const MyCards = () => {
             <NavLink
               className={"text-decoration-none"}
               style={{ color: "white" }}
-              to={"/card-creator"}
+              to={"/SPA-realApp/card-creator"}
             >
               Create a card
             </NavLink>
