@@ -24,11 +24,7 @@ const LogIn = () => {
         .min(5)
         .max(150)
         .required(),
-      password: Joi.string()
-        .min(8)
-        .max(20)
-        .base64({ paddingRequired: false })
-        .required(),
+      password: Joi.string().min(8).max(20).required(),
     }),
     async onSubmit(values) {
       setError("");

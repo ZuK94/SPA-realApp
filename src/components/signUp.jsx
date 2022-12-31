@@ -29,10 +29,10 @@ const SignUp = () => {
       password: Joi.string().min(8).max(20).required(),
     }),
     async onSubmit(values) {
+      setError("");
       try {
         await createUser({ ...values, biz: false });
         await logIn({ email: values.email, password: values.password });
-        setError("");
         navigate("/SPA-realApp");
         toast("congratulations, you are a user now");
       } catch ({ response }) {
